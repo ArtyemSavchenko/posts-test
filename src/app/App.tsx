@@ -1,20 +1,6 @@
-import { getPosts } from "entities/Post";
-import { useEffect } from "react";
+import { RouterProvider } from 'react-router';
+import { router } from './providers/router';
 
 export const App = () => {
-  useEffect(() => {
-    const handlePostGet = async () => {
-      try {
-        const posts = await getPosts();
-
-        console.log(posts);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    handlePostGet();
-  }, []);
-
-  return <>hello</>;
+  return <RouterProvider router={router} />;
 };
