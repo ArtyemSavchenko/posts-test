@@ -1,20 +1,27 @@
-import type { TPost } from 'entities/Post';
 import type { FC } from 'react';
-import { Link } from 'react-router';
+import { ArrowRight } from 'shared/ui/icons';
 import { Post } from 'shared/ui/Post';
+import { RouterLink } from 'shared/ui/RouterLink';
+import { joinClasses } from 'shared/utils';
+import s from './PostList.module.css';
+import type { TPostListProps } from './PostList.types';
 
-type TPostListProps = {
-  posts: TPost[];
-};
-
-export const PostList: FC<TPostListProps> = ({ posts }) => {
+export const PostList: FC<TPostListProps> = ({ posts, className }) => {
   return (
-    <ul>
+    <ul className={joinClasses(s['post-list'], className)}>
       {posts.map((post) => (
         <li key={post.id}>
           <Post
             {...post}
-            actionEl={<Link to={`post/${post.id}`}>Подробнее</Link>}
+            actionEl={
+              <RouterLink
+                className={s['post-list__post-link']}
+                to={`post/${post.id}`}
+                RightIcon={ArrowRight}
+              >
+                Подробнее
+              </RouterLink>
+            }
           />
         </li>
       ))}

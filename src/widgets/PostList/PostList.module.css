@@ -1,0 +1,11 @@
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-list__post-link {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+}
