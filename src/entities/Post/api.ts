@@ -6,5 +6,5 @@ export const getPosts = () => {
 };
 
 export const getPostById = (id: number) => {
-  return api.get<TPost>(`/posts/${id}}`);
+  return api.get<TPost>(`/posts/${id}`);
 };
