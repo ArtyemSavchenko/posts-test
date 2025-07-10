@@ -18,7 +18,7 @@ export const PostList: FC<TPostListProps> = ({ posts, className }) => {
             to={`post/${post.id}`}
             RightIcon={ArrowRight}
           >
-            Подробнее
+            Просмотр
           </RouterLink>
         </li>
       ))}

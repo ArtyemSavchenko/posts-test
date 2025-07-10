@@ -13,7 +13,7 @@ export const PostListSkeleton: FC<TPostSkeletonProps> = ({ className }) => {
           <PostSkeleton isPreview />
 
           <Skeleton variant="text" className={s['post-list__post-link']}>
-            <div>Подробнее</div>
+            <div>Просмотр</div>
           </Skeleton>
         </li>
       ))}
