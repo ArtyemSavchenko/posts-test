@@ -1,0 +1,22 @@
+.router-link {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 2px;
+  min-height: 32px;
+  text-decoration: none;
+  color: #222;
+}
+
+@media (any-hover: hover) {
+  .router-link:hover {
+    color: #555;
+  }
+}
+
+.router-link:active {
+  color: #222;
+}
+
+.router-link__icon {
+  height: 1em;
+}
