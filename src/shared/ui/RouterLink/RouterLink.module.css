@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   column-gap: 2px;
+  min-height: 32px;
 }
 
 .router-link__icon {

@@ -1,8 +1,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { getPostById, type TPost } from 'entities/Post';
+import { getPostById, Post, type TPost } from 'entities/Post';
 import { useParams } from 'react-router';
 import { ArrowLeft } from 'shared/ui/icons';
-import { Post } from 'shared/ui/Post';
 import { RouterLink } from 'shared/ui/RouterLink';
 import s from './PostPage.module.css';
 
