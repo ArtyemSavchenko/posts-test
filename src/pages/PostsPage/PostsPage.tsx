@@ -15,7 +15,7 @@ export const PostsPage: FC = () => {
   }
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <div>Не удалось загрузить посты</div>;
   }
 
   return <PostList posts={posts} />;
