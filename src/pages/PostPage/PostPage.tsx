@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { getPostById, Post, type TPost } from 'entities/Post';
+import { getPostById, Post, PostSkeleton, type TPost } from 'entities/Post';
 import { useParams } from 'react-router';
 import { ArrowLeft } from 'shared/ui/icons';
 import { RouterLink } from 'shared/ui/RouterLink';
@@ -20,7 +20,7 @@ export const PostPage = () => {
 
   const getPostEl = () => {
     if (status === 'pending') {
-      return <div>Loading</div>;
+      return <PostSkeleton />;
     }
 
     if (status === 'error') {

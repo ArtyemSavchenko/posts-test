@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getPosts } from 'entities/Post';
 import { type FC } from 'react';
-import { PostList } from 'widgets/PostList';
+import { PostList, PostListSkeleton } from 'widgets/PostList';
 
 export const PostsPage: FC = () => {
   const {
@@ -11,7 +11,7 @@ export const PostsPage: FC = () => {
   } = useQuery({ queryKey: ['posts'], queryFn: getPosts });
 
   if (status === 'pending') {
-    return <div>Loading...</div>;
+    return <PostListSkeleton />;
   }
 
   if (error) {

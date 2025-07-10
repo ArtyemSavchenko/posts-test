@@ -8,3 +8,6 @@ export type TSvgIcon = FC<
     descId?: string;
   }
 >;
+
+export type TCLassName = { className?: string };
+export type TIsLoading = { isLoading?: boolean };
