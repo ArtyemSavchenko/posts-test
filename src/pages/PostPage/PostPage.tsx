@@ -1,34 +1,12 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { getPostById, Post, PostSkeleton, type TPost } from 'entities/Post';
 import { useParams } from 'react-router';
 import { ArrowLeft } from 'shared/ui/icons';
 import { RouterLink } from 'shared/ui/RouterLink';
+import { FullPost } from 'widgets/FullPost';
 import s from './PostPage.module.css';
 
 export const PostPage = () => {
   const { id } = useParams();
   const numberId = Number(id);
-
-  const queryClient = useQueryClient();
-  const posts: TPost[] | undefined = queryClient.getQueryData(['posts']);
-
-  const { status, data: post } = useQuery({
-    queryKey: ['post', id],
-    queryFn: () => getPostById(numberId),
-    initialData: posts?.find((post) => post.id === numberId),
-  });
-
-  const getPostEl = () => {
-    if (status === 'pending') {
-      return <PostSkeleton />;
-    }
-
-    if (status === 'error') {
-      return <div>Не удалось загрузить пост</div>;
-    }
-
-    return <Post {...post} />;
-  };
 
   return (
     <div>
@@ -40,7 +18,7 @@ export const PostPage = () => {
         К постам
       </RouterLink>
 
-      {getPostEl()}
+      <FullPost id={numberId} />
     </div>
   );
 };
